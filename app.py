@@ -82,9 +82,13 @@ def find_subset(S, V):
             return set(s)
     return None
 
-# Извеждаме резултата
-subset = find_subset(S, V)
-if subset is not None:
-    st.write(f"Резултат: Съществува подмножество s = {subset}, за което ∀v ∈ V: D(s, v) е **:green[вярно]**")
+
+if V is None or S is None:
+    st.write("Изберете множества S и V")
 else:
-    st.write("Резултат: **:red[Няма такова подмножество]**")
+    # Извеждаме резултата
+    subset = find_subset(S, V)
+    if subset is not None:
+        st.write(f"Резултат: Съществува подмножество s = {subset}, за което ∀v ∈ V: D(s, v) е **:green[вярно]**")
+    else:
+        st.write("Резултат: **:red[Няма такова подмножество]**")
