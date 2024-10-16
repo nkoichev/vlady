@@ -3,7 +3,12 @@
 # source venv/bin/activate
 # pip install -r requirements.txt
 
+
 import streamlit as st
+def do_stuff_on_page_load():
+    st.set_page_config(layout="wide", page_title="VEAS BG", page_icon="📊")
+do_stuff_on_page_load()
+
 import pandas as pd
 import numpy as np
 from streamlit_option_menu import option_menu
