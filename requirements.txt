@@ -1,2 +1,3 @@
 streamlit
 watchdog
+streamlit_option_menu
