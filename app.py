@@ -73,7 +73,7 @@ else:
         return v in s
 
     st.code("def D(s, v): return v in s")
-    st.write("В тази функция сме заложили предиката D(s, v), която проверява дали стойността v е в множеството s")
+    st.write("Тази функция 'def D(s, v): return v in s', проверява дали стойността v е в множеството s")
 
     # Function to find a subset of S that satisfies the conditions
     def find_subset(S, V):
@@ -92,3 +92,45 @@ else:
         st.write(f"Резултат: Съществува подмножество s = {subset}, за което ∀v ∈ V: D(s, v) е **:green[вярно]**")
     else:
         st.write("Резултат: **:red[Няма такова подмножество]**")
+
+
+st.write("---")
+
+
+
+# Define the sets S and V
+elements = {1, 2, 3, 4, 5}
+values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+# S = st.multiselect("Choose some elements of S:", elements)
+# V = st.multiselect("Choose some values of V:", values)
+
+# Check if both S and V are selected and non-empty
+if not S or not V:
+    st.write("Изберете множества S и V")
+else:
+
+    # Define the predicate D(s, v), which checks if s is greater than or equal to v
+    def D(s, v):
+        return s >= v
+
+    st.code("def D(s, v): return s >= v")
+    st.write("Тази функция 'def D(s, v): return s >= v', проверява дали s е по-голямо или равно на v")
+
+    # Function to check if for every v in V, there exists an s in S where D(s, v) is true
+    def find_s_for_all_v(S, V):
+        for v in V:
+            if not any(D(s, v) for s in S):
+                return False
+        return True
+
+    # Display the result
+    if find_s_for_all_v(S, V):
+        st.write("Резултат: За всяко v ∈ V, съществува s ∈ S, за което D(s, v) е **:green[вярно]**")
+    else:
+        st.write("Резултат: **:red[Няма такова s за всички v]**")
+
+
+    st.write("---")
+
+
