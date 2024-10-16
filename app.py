@@ -6,7 +6,7 @@
 
 import streamlit as st
 def do_stuff_on_page_load():
-    st.set_page_config(layout="wide", page_title="VEAS BG", page_icon="📊")
+    st.set_page_config(layout="wide", page_title="Vlady", page_icon="📊")
 do_stuff_on_page_load()
 
 import pandas as pd
