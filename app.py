@@ -1,3 +1,8 @@
+
+# python3 -m venv venv
+# source venv/bin/activate
+# pip install -r requirements.txt
+
 import streamlit as st
 import pandas as pd
 import numpy as np
