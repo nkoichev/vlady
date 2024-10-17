@@ -45,6 +45,7 @@ if choose == 'Vorlesung 1':
 
 
     with st.sidebar:
+        st.write("---")
         # User inputs for Boolean values
         a = st.selectbox("Choose a value for A:", [True, False])
         b = st.selectbox("Choose a value for B:", [True, False])
@@ -113,6 +114,7 @@ if choose == 'Vorlesung 2':
 
 
     with st.sidebar:
+        st.write("---")
         S = st.multiselect("Choose some elements of S:", elements)
         V = st.multiselect("Choose some values of V:", values)
 
