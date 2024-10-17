@@ -27,7 +27,7 @@ import streamlit as st
 
 
 with st.sidebar:
-    choose = option_menu("Hello, Vlady!", ['Vorlesung 1','Vorlesung 2'],
+    choose = option_menu("Hallo, Vlady!", ['Vorlesung 1','Vorlesung 2'],
                         icons=['paperclip', 'paperclip'],
                         menu_icon="calendar3", default_index=0,
                         styles={
