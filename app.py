@@ -70,20 +70,26 @@ if choose == 'Лекция 1':
 
 
     # Display the formula in code form
-    code_formula = st.code("A ∧ B = A, A ∨ B = B, ¬A = ¬B, A → B = ¬A ∨ B")
-    code_conjunction = st.code("A ∧ B = A")
-    code_disjunction = st.code("A ∨ B = B")
-    code_negation = st.code("¬A = ¬B")
-    code_implication = st.code("A → B = ¬A ∨ B")
+    # code_formula = st.code("A ∧ B = A, A ∨ B = B, ¬A = ¬B, A → B = ¬A ∨ B")
+    
 
     # Explanation section
     st.write(f"""
-    ### Explanation:
-    - **Conjunction (AND)**: Returns True if both A and B are True {code_conjunction}.
+    - **Conjunction (AND)**: Returns True if both A and B are True
+    """)
+    code_conjunction = st.code("A ∧ B = A")
+    st.write(f"""
     - **Disjunction (OR)**: Returns True if either A or B is True.
+    """)
+    code_disjunction = st.code("A ∨ B = B")
+    st.write(f"""
     - **Negation (NOT)**: Inverts the value of A or B.
+    """)
+    code_negation = st.code("¬A = ¬B")
+    st.write(f"""
     - **Implication (IF THEN)**: Returns True if A is False or B is True.
     """)
+    code_implication = st.code("A → B = ¬A ∨ B")
 
 if choose == 'Лекция 2':
 
