@@ -93,9 +93,9 @@ if choose == 'Vorlesung 1':
     code_implication = st.code("A → B = ¬A ∨ B")
 
     st.write(f"""
-                :blue[∧] represents Conjunction (AND) <br>  
-                :blue[∨] represents Disjunction (OR) <br>  
-                :blue[¬] represents Negation (NOT) <br>  
+                :blue[∧] represents Conjunction (AND)   
+                :blue[∨] represents Disjunction (OR)  
+                :blue[¬] represents Negation (NOT)  
                 :blue[→] represents Implication (IF THEN)
                     """)
 
