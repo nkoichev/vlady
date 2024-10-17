@@ -121,7 +121,7 @@ if choose == 'Vorlesung 2':
 
     # Check if both S and V are selected and non-empty
     if not S or not V:
-        st.write("Изберете множества S и V")
+        st.write("---")
     else:
 
         # Define the predicate D(s, v), which checks if v is in s
@@ -163,7 +163,7 @@ if choose == 'Vorlesung 2':
 
     # Check if both S and V are selected and non-empty
     if not S or not V:
-        st.write("Изберете множества S и V")
+        st.write("---")
     else:
 
         # Define the predicate D(s, v), which checks if s is greater than or equal to v
