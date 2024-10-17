@@ -19,7 +19,7 @@ from streamlit_option_menu import option_menu
 # import json
 
 
-st.write("Hello, Vlady!")
+# st.write("Hello, Vlady!")
 
 # show me examples of Конюнкция, дизюнкция, отрицание
 
