@@ -27,7 +27,7 @@ import streamlit as st
 
 
 with st.sidebar:
-    choose = option_menu("Hello, Vlady!", ['Лекция 1','Лекция 2'],
+    choose = option_menu("Hello, Vlady!", ['Vorlesung 1','Vorlesung 2'],
                         icons=['paperclip', 'paperclip'],
                         menu_icon="calendar3", default_index=0,
                         styles={
@@ -38,7 +38,7 @@ with st.sidebar:
     }
     )
 
-if choose == 'Лекция 1':
+if choose == 'Vorlesung 1':
 
     # Title of the app
     st.title("Conjunction, Disjunction, Negation, Implication - Logical Operations")
@@ -98,7 +98,7 @@ if choose == 'Лекция 1':
                 :blue[→] represents Implication (IF THEN)
                     """)
 
-if choose == 'Лекция 2':
+if choose == 'Vorlesung 2':
 
 
 
