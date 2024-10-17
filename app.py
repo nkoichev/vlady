@@ -111,7 +111,7 @@ if choose == 'Vorlesung 2':
     elements = {1, 2, 3, 4, 5}
     values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
-    col1, col2 = st.columns([1, 3], gap="large")
+    col1, col2 = st.columns([3, 2], gap="large")
     with col1:
         S = st.multiselect("Choose some elements of S:", elements)
         V = st.multiselect("Choose some values of V:", values)
