@@ -43,7 +43,7 @@ if choose == 'Лекция 1':
     # Title of the app
     st.title("Conjunction, Disjunction, Negation, Implication - Logical Operations")
 
-    col1, col2 = st.columns([1, 2])
+    col1, col2 = st.columns([1, 3], gap="large")
     with col1:
         # User inputs for Boolean values
         a = st.selectbox("Choose a value for A:", [True, False])
