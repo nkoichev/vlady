@@ -11,6 +11,7 @@ do_stuff_on_page_load()
 
 import pandas as pd
 import numpy as np
+
 from streamlit_option_menu import option_menu
 # import plotly.express as px
 # import plotly.graph_objects as go
@@ -40,7 +41,7 @@ with st.sidebar:
 if choose == 'Лекция 1':
 
     # Title of the app
-    st.title("Conjunction, Disjunction, Negation - Logical Operations")
+    st.title("Conjunction, Disjunction, Negation, Implication - Logical Operations")
 
     # User inputs for Boolean values
     a = st.selectbox("Choose a value for A:", [True, False])
@@ -60,12 +61,17 @@ if choose == 'Лекция 1':
     st.write("Negation (NOT A): ", negation_a)
     st.write("Negation (NOT B): ", negation_b)
 
+    # Implication (IF THEN)
+    implication = not a or b
+    st.write("Implication (IF THEN): ", implication)
+
     # Explanation section
     st.write("""
     ### Explanation:
     - **Conjunction (AND)**: Returns True if both A and B are True.
     - **Disjunction (OR)**: Returns True if either A or B is True.
     - **Negation (NOT)**: Inverts the value of A or B.
+    - **Implication (IF THEN)**: Returns True if A is False or B is True.
     """)
 
 if choose == 'Лекция 2':
