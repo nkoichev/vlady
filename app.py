@@ -77,19 +77,26 @@ if choose == 'Лекция 1':
     st.write(f"""
     - **Conjunction (AND)**: Returns True if both A and B are True
     """)
-    code_conjunction = st.code("A ∧ B = A")
+    code_conjunction = st.code("A ∧ B")
     st.write(f"""
     - **Disjunction (OR)**: Returns True if either A or B is True.
     """)
-    code_disjunction = st.code("A ∨ B = B")
+    code_disjunction = st.code("A ∨ B")
     st.write(f"""
     - **Negation (NOT)**: Inverts the value of A or B.
     """)
-    code_negation = st.code("¬A = ¬B")
+    code_negation = st.code("¬A ¬B")
     st.write(f"""
     - **Implication (IF THEN)**: Returns True if A is False or B is True.
     """)
     code_implication = st.code("A → B = ¬A ∨ B")
+
+    st.write(f"""
+                :blue[∧] represents Conjunction (AND)
+                :blue[∨] represents Disjunction (OR)
+                :blue[¬] represents Negation (NOT)
+                :blue[→] represents Implication (IF THEN)
+                    """)
 
 if choose == 'Лекция 2':
 
