@@ -43,30 +43,30 @@ if choose == 'Vorlesung 1':
     # Title of the app
     st.title("Conjunction, Disjunction, Negation, Implication - Logical Operations")
 
-    col1, col2 = st.columns([1, 3], gap="large")
-    with col1:
+
+    with st.sidebar:
         # User inputs for Boolean values
         a = st.selectbox("Choose a value for A:", [True, False])
         b = st.selectbox("Choose a value for B:", [True, False])
 
-    with col2:
-        # Conjunction (AND)
-        conjunction = a and b
-        st.write("Conjunction (A AND B): ", conjunction)
 
-        # Disjunction (OR)
-        disjunction = a or b
-        st.write("Disjunction (A OR B): ", disjunction)
+    # Conjunction (AND)
+    conjunction = a and b
+    st.write("Conjunction (A AND B): ", conjunction)
 
-        # Negation (NOT)
-        negation_a = not a
-        negation_b = not b
-        st.write("Negation (NOT A): ", negation_a)
-        st.write("Negation (NOT B): ", negation_b)
+    # Disjunction (OR)
+    disjunction = a or b
+    st.write("Disjunction (A OR B): ", disjunction)
 
-        # Implication (IF THEN)
-        implication = not a or b
-        st.write("Implication (IF THEN): ", implication)
+    # Negation (NOT)
+    negation_a = not a
+    negation_b = not b
+    st.write("Negation (NOT A): ", negation_a)
+    st.write("Negation (NOT B): ", negation_b)
+
+    # Implication (IF THEN)
+    implication = not a or b
+    st.write("Implication (IF THEN): ", implication)
 
 
     # Display the formula in code form
