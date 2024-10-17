@@ -43,27 +43,30 @@ if choose == 'Лекция 1':
     # Title of the app
     st.title("Conjunction, Disjunction, Negation, Implication - Logical Operations")
 
-    # User inputs for Boolean values
-    a = st.selectbox("Choose a value for A:", [True, False])
-    b = st.selectbox("Choose a value for B:", [True, False])
+    col1, col2 = st.columns([1, 2])
+    with col1:
+        # User inputs for Boolean values
+        a = st.selectbox("Choose a value for A:", [True, False])
+        b = st.selectbox("Choose a value for B:", [True, False])
 
-    # Conjunction (AND)
-    conjunction = a and b
-    st.write("Conjunction (A AND B): ", conjunction)
+    with col2:
+        # Conjunction (AND)
+        conjunction = a and b
+        st.write("Conjunction (A AND B): ", conjunction)
 
-    # Disjunction (OR)
-    disjunction = a or b
-    st.write("Disjunction (A OR B): ", disjunction)
+        # Disjunction (OR)
+        disjunction = a or b
+        st.write("Disjunction (A OR B): ", disjunction)
 
-    # Negation (NOT)
-    negation_a = not a
-    negation_b = not b
-    st.write("Negation (NOT A): ", negation_a)
-    st.write("Negation (NOT B): ", negation_b)
+        # Negation (NOT)
+        negation_a = not a
+        negation_b = not b
+        st.write("Negation (NOT A): ", negation_a)
+        st.write("Negation (NOT B): ", negation_b)
 
-    # Implication (IF THEN)
-    implication = not a or b
-    st.write("Implication (IF THEN): ", implication)
+        # Implication (IF THEN)
+        implication = not a or b
+        st.write("Implication (IF THEN): ", implication)
 
     # Explanation section
     st.write("""
