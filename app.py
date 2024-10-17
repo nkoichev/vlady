@@ -68,10 +68,18 @@ if choose == 'Лекция 1':
         implication = not a or b
         st.write("Implication (IF THEN): ", implication)
 
+
+    # Display the formula in code form
+    code_formula = st.code("A ∧ B = A, A ∨ B = B, ¬A = ¬B, A → B = ¬A ∨ B")
+    code_conjunction = st.code("A ∧ B = A")
+    code_disjunction = st.code("A ∨ B = B")
+    code_negation = st.code("¬A = ¬B")
+    code_implication = st.code("A → B = ¬A ∨ B")
+
     # Explanation section
-    st.write("""
+    st.write(f"""
     ### Explanation:
-    - **Conjunction (AND)**: Returns True if both A and B are True.
+    - **Conjunction (AND)**: Returns True if both A and B are True {code_conjunction}.
     - **Disjunction (OR)**: Returns True if either A or B is True.
     - **Negation (NOT)**: Inverts the value of A or B.
     - **Implication (IF THEN)**: Returns True if A is False or B is True.
