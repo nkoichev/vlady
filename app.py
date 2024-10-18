@@ -105,9 +105,9 @@ if choose == 'Vorlesung 2':
     from itertools import chain, combinations
 
     # Display the formula in code form
-    st.code("∃s∈S:∀v∈V:D(s,v)")
+    st.code("∃s∈S:∀v∈V:Da(s,v)")
     # EXPLAIN THE PREDICATE: ∃s⊆S:∀v∈V:D(s,v)
-    st.write("Съществува :blue[s] принадлежащо на множеството :blue[S], такова че за всяко :blue[v] принадлежащо на множеството :blue[V], функцията :blue[D(s, v)] ще бъде вярна")
+    st.write("Съществува :blue[s] принадлежащо на множеството :blue[S], такова че за всяко :blue[v] принадлежащо на множеството :blue[V], функцията :blue[Da(s, v)] ще бъде вярна")
 
     # Define the sets S and V
     elements_s = {1, 2, 3, 4, 5}
@@ -132,10 +132,10 @@ if choose == 'Vorlesung 2':
             return all(v >= el for el in s)  # Ensuring that v is greater than or equal to each element in the subset s
 
         st.write("---")
-        st.write(f"* Примерна функция 1: проверява дали съществуват **s** от множеството **S**, за които да е изпълнена функцията **D(s, v)**.")
+        st.write(f"* Примерна функция 1: проверява дали съществуват **s** от множеството **S**, за които да е изпълнена функцията **Da(s, v)**.")
         st.code("def Da(s, v): return v in s")
         st.write("---")
-        st.write(f"* Примерна функция 2: проверява дали съществуват **s** от множеството **S**, за които да е изпълнена функцията **Dа(s, v)**. ")
+        st.write(f"* Примерна функция 2: проверява дали съществуват **s** от множеството **S**, за които да е изпълнена функцията **Da2(s, v)**. ")
         st.code("def Da2(s, v): return all(v >= el for el in s)")
         st.write("---")
         # Function to find a subset of S that satisfies the conditions
