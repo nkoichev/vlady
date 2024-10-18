@@ -135,7 +135,7 @@ if choose == 'Vorlesung 2':
         st.write(f"* Примерна функция 1: проверява дали съществуват **s** от множеството **S**, за които да е изпълнена функцията **D(s, v)**.")
         st.code("def Da(s, v): return v in s")
         st.write("---")
-        st.write(f"* Примерна функция 2: проверява дали съществуват **s** от множеството **S**, за които да е изпълнена функцията **Dа(s, v)**.")
+        st.write(f"* Примерна функция 2: проверява дали съществуват **s** от множеството **S**, за които да е изпълнена функцията **Dа(s, v)**. ")
         st.code("def Da2(s, v): return all(v >= el for el in s)")
         st.write("---")
         # Function to find a subset of S that satisfies the conditions
