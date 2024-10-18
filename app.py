@@ -127,12 +127,16 @@ if choose == 'Vorlesung 2':
     else:
 
         # Define the predicate D(s, v), which checks if v is in s
-        def D(s, v):
+        def Da(s, v):
             return v in s
 
-        st.code("def D(s, v): return v in s")
-        st.write(f"Примерната функция :blue[def D(s, v): return v in s] проверява дали стойността :blue[v] сe среща в множеството :blue[s]")
+        def Da2(s, v):
+            return v >= s
 
+        st.code("def Da(s, v): return v in s")
+        st.write(f"* Примерна функция 1: :blue[def D(s, v): return v in s] - проверява дали стойността :blue[v] сe среща в множеството :blue[s]")
+        st.code("def Da2(s, v): return v >= s")
+        st.write(f"* Примерна функция 2: :blue[def D(s, v): return v in s] - проверява дали стойността :blue[v] сe среща в множеството :blue[s]")
         # Function to find a subset of S that satisfies the conditions
         def find_subset(S, V):
             def all_subsets(S):
@@ -140,19 +144,39 @@ if choose == 'Vorlesung 2':
 
             # Check if there exists a subset s of S where ∀v ∈ V, D(s, v) is true
             for s in all_subsets(S):
-                if all(D(s, v) for v in V):
+                if all(Da(s, v) for v in V):
                     return set(s)
             return None
 
+        # Function to find a subset of S that satisfies the conditions
+        def find_subset2(S, V):
+            def all_subsets(S):
+                return chain.from_iterable(combinations(S, r) for r in range(len(S) + 1))
+
+            # Check if there exists a subset s of S where ∀v ∈ V, D(s, v) is true
+            for s in all_subsets(S):
+                if all(Da2(s, v) for v in V):
+                    return set(s)
+            return None
+        
+        
         # Display the result
         subset = find_subset(S, V)
+        subset2 = find_subset2(S, V)
         if subset is not None:
-            st.write(f"Резултат: Съществува подмножество s = {subset}, за което ∀v ∈ V: D(s, v) е **:green[вярно]**")
+            st.write(f"Резултат 1: Съществува подмножество s = {subset}, за което ∀v ∈ V: D(s, v) е **:green[вярно]**")
+
         else:
-            st.write("Резултат: **:red[Няма такова подмножество]**")
+            st.write("Резултат 1: **:red[Няма такова подмножество]**")
 
 
-    # st.write("---")
+        if subset2 is not None:
+            st.write(f"Резултат 2: Съществува подмножество s = {subset2}, за което ∀v ∈ V: D(s, v) е **:green[вярно]**")
+
+        else:
+            st.write("Резултат 2: **:red[Няма такова подмножество]**")
+
+
 
 
 
