@@ -107,16 +107,16 @@ if choose == 'Vorlesung 2':
     # Display the formula in code form
     st.code("∃s∈S:∀v∈V:D(s,v)")
     # EXPLAIN THE PREDICATE: ∃s⊆S:∀v∈V:D(s,v)
-    st.write("Съществува :blue[s] принадлежащо на множеството :blue[S], такова че за всеки :blue[v] принадлежащо на множеството :blue[V], функцията :blue[D(s, v)] ще бъде вярна")
+    st.write("Съществува :blue[s] принадлежащо на множеството :blue[S], такова че за всяко :blue[v] принадлежащо на множеството :blue[V], функцията :blue[D(s, v)] ще бъде вярна")
 
     # Define the sets S and V
-    elements = {1, 2, 3, 4, 5}
-    values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    elements_s = {1, 2, 3, 4, 5}
+    elements_v = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
     with st.sidebar:
         st.write("---")
-        S = st.multiselect("Choose some elements of S:", elements)
-        V = st.multiselect("Choose some values of V:", values)
+        S = st.multiselect("Choose some elements of S:", elements_s)
+        V = st.multiselect("Choose some elements of V:", elements_v)
 
     # Check if both S and V are selected and non-empty
     if not S or not V:
@@ -132,10 +132,10 @@ if choose == 'Vorlesung 2':
             return all(v >= el for el in s)  # Ensuring that v is greater than or equal to each element in the subset s
 
         st.write("---")
-        st.write(f"* Примерна функция 1: проверява дали съществуват стойности **s** от множеството **S**, за които да има съвпадение с всяка една стойност **v** от множеството **V**")
+        st.write(f"* Примерна функция 1: проверява дали съществуват **s** от множеството **S**, за които да е изпълнена функцията **D(s, v)**.")
         st.code("def Da(s, v): return v in s")
         st.write("---")
-        st.write(f"* Примерна функция 2: проверява дали съществуват стойности **s** от множеството **S**, за които да са по-големи или равни на всяка една стойност **v** от множеството **V**")
+        st.write(f"* Примерна функция 2: проверява дали съществуват **s** от множеството **S**, за които да е изпълнена функцията **Dа(s, v)**.")
         st.code("def Da2(s, v): return all(v >= el for el in s)")
         st.write("---")
         # Function to find a subset of S that satisfies the conditions
