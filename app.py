@@ -152,9 +152,20 @@ if choose == 'Vorlesung 2':
                     
             return [set(s) for s in valid_subsets]  # Convert frozensets back to normal sets for display
 
+        # Function to filter out subsets that are strict subsets of larger valid subsets
+        def filter_largest_subsets(subsets):
+            largest_subsets = []
+            for s in subsets:
+                if not any(s < other for other in subsets):  # Check if 's' is not a strict subset of any other set
+                    largest_subsets.append(s)
+            return largest_subsets
+
         # Use the function to find all valid subsets for Da and Da2
         valid_subsets_1 = find_all_subsets(S, V, Da)
         valid_subsets_2 = find_all_subsets(S, V, Da2)
+
+        # Filter out the strict subsets for Da2
+        largest_valid_subsets_2 = filter_largest_subsets(valid_subsets_2)
 
         # Display the results for the first predicate
         if valid_subsets_1:
@@ -162,9 +173,9 @@ if choose == 'Vorlesung 2':
         else:
             st.write("Резултат 1: **:red[Няма такива подмножества]**")
 
-        # Display the results for the second predicate
-        if valid_subsets_2:
-            st.write(f"Резултат 2: Съществуват подмножества s = {valid_subsets_2}, за които ∀v ∈ V: Da2(s, v) е **:green[вярно]**")
+        # Display the results for the second predicate (Da2) after filtering
+        if largest_valid_subsets_2:
+            st.write(f"Резултат 2: Съществуват подмножества s = {largest_valid_subsets_2}, за които ∀v ∈ V: Da2(s, v) е **:green[вярно]**")
         else:
             st.write("Резултат 2: **:red[Няма такива подмножества]**")
 
