@@ -106,7 +106,7 @@ if choose == 'Vorlesung 2':
     from itertools import chain, combinations
 
     # Display the formula in code form
-    st.code("∃s⊆S:∀v∈V:D(s,v)")
+    st.code("∃s∈S:∀v∈V:D(s,v)")
     # EXPLAIN THE PREDICATE: ∃s⊆S:∀v∈V:D(s,v)
     st.write("Съществува :blue[s] принадлежащо на множеството :blue[S], такова че за всеки :blue[v] принадлежащо на множеството :blue[V], функцията :blue[D(s, v)] ще бъде вярна")
 
