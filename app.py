@@ -114,12 +114,10 @@ if choose == 'Vorlesung 2':
     elements = {1, 2, 3, 4, 5}
     values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
-
     with st.sidebar:
         st.write("---")
         S = st.multiselect("Choose some elements of S:", elements)
         V = st.multiselect("Choose some values of V:", values)
-
 
     # Check if both S and V are selected and non-empty
     if not S or not V:
@@ -130,14 +128,15 @@ if choose == 'Vorlesung 2':
         def Da(s, v):
             return v in s
 
+        # Define the second predicate Da2(s, v), which checks if v >= s (this needs to be for each element of s)
         def Da2(s, v):
-            if isinstance(v, (int, float)) and isinstance(s, (int, float)):
-                return v >= s
+            return all(v >= el for el in s)  # Ensuring that v is greater than or equal to each element in the subset s
 
         st.code("def Da(s, v): return v in s")
         st.write(f"* Примерна функция 1: :blue[def D(s, v): return v in s]  проверява дали стойността :blue[v] сe среща в множеството :blue[s]")
-        st.code("def Da2(s, v): return v >= s")
-        st.write(f"* Примерна функция 2: :blue[def D(s, v): return v >= s]  проверява дали стойността :blue[v] >= множеството :blue[s]")
+        st.code("def Da2(s, v): return all(v >= el for el in s)")
+        st.write(f"* Примерна функция 2: :blue[def D(s, v): return all(v >= el for el in s)]  проверява дали стойността :blue[v] >= всички елементи в множеството :blue[s]")
+        
         # Function to find a subset of S that satisfies the conditions
         def find_subset(S, V):
             def all_subsets(S):
@@ -149,33 +148,31 @@ if choose == 'Vorlesung 2':
                     return set(s)
             return None
 
-        # Function to find a subset of S that satisfies the conditions
+        # Function to find a subset of S that satisfies the second condition (Da2)
         def find_subset2(S, V):
             def all_subsets(S):
                 return chain.from_iterable(combinations(S, r) for r in range(len(S) + 1))
 
-            # Check if there exists a subset s of S where ∀v ∈ V, Da(s, v) is true
+            # Check if there exists a subset s of S where ∀v ∈ V, Da2(s, v) is true
             for s in all_subsets(S):
                 if all(Da2(s, v) for v in V):
                     return set(s)
             return None
-        
-        
+
         # Display the result
         subset = find_subset(S, V)
         subset2 = find_subset2(S, V)
+        
         if subset is not None:
             st.write(f"Резултат 1: Съществува подмножество s = {subset}, за което ∀v ∈ V: D(s, v) е **:green[вярно]**")
-
         else:
             st.write("Резултат 1: **:red[Няма такова подмножество]**")
 
-
         if subset2 is not None:
             st.write(f"Резултат 2: Съществува подмножество s = {subset2}, за което ∀v ∈ V: D(s, v) е **:green[вярно]**")
-
         else:
             st.write("Резултат 2: **:red[Няма такова подмножество]**")
+
 
 
 
