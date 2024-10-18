@@ -123,7 +123,7 @@ if choose == 'Vorlesung 2':
 
     # Check if both S and V are selected and non-empty
     if not S or not V:
-        st.write("---")
+        st.write("")
     else:
 
         # Define the predicate D(s, v), which checks if v is in s
@@ -152,7 +152,7 @@ if choose == 'Vorlesung 2':
             st.write("Резултат: **:red[Няма такова подмножество]**")
 
 
-    st.write("---")
+    # st.write("---")
 
 
 
