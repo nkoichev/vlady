@@ -101,7 +101,6 @@ if choose == 'Vorlesung 1':
 
 if choose == 'Vorlesung 2':
 
-
     from itertools import chain, combinations
 
     # Display the formula in code form
@@ -139,17 +138,19 @@ if choose == 'Vorlesung 2':
         st.code("def Da2(s, v): return all(v >= el for el in s)")
         st.write("---")
 
-        # Function to find all subsets of S that satisfy the condition Da(s, v)
+        # Function to find all unique subsets of S that satisfy the condition Da(s, v)
         def find_all_subsets(S, V, predicate):
             def all_subsets(S):
                 return chain.from_iterable(combinations(S, r) for r in range(1, len(S) + 1))  # Start from 1, no empty subsets
 
-            valid_subsets = []
+            valid_subsets = set()  # Use a set to store unique frozen sets (since sets are mutable)
+            
             # Check all subsets and collect those that satisfy the predicate for all v in V
             for s in all_subsets(S):
                 if all(predicate(s, v) for v in V):
-                    valid_subsets.append(set(s))  # Collect valid subsets
-            return valid_subsets
+                    valid_subsets.add(frozenset(s))  # Use frozenset to store the subset in a hashable form
+                    
+            return [set(s) for s in valid_subsets]  # Convert frozensets back to normal sets for display
 
         # Use the function to find all valid subsets for Da and Da2
         valid_subsets_1 = find_all_subsets(S, V, Da)
@@ -166,8 +167,6 @@ if choose == 'Vorlesung 2':
             st.write(f"Резултат 2: Съществуват подмножества s = {valid_subsets_2}, за които ∀v ∈ V: Da2(s, v) е **:green[вярно]**")
         else:
             st.write("Резултат 2: **:red[Няма такива подмножества]**")
-
-
 
 
 
