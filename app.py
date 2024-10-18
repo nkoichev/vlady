@@ -190,3 +190,36 @@ if choose == 'Vorlesung 2':
         st.write("---")
 
 
+
+    st.code('∃s⊆S: D(s, v) ∧ ∀v∈V: D(s, v)')
+
+    # from itertools import chain, combinations
+
+    # # Множества S и V
+    # S = {1, 2, 3, 4, 5}
+    # V = {1, 2, 3}
+
+    # Предикат D(s, v), който проверява дали v принадлежи на s
+    def D(s, v):
+        return v in s
+
+    # Функция за намиране на подмножество s, такова че D(s, v) за някое v ∈ V и ∀v ∈ V: D(s, v) е вярно
+    def find_subset_with_condition(S, V):
+        def all_subsets(S):
+            return chain.from_iterable(combinations(S, r) for r in range(len(S)+1))
+
+        for s in all_subsets(S):
+            # Проверяваме дали съществува някакво v ∈ V, за което D(s, v) и ∀v ∈ V: D(s, v)
+            if any(D(s, v) for v in V) and all(D(s, v) for v in V):
+                return set(s)
+        return None
+
+    # Пример
+    subset = find_subset_with_condition(S, V)
+    if subset:
+        st.write(f"Подмножество s = {subset}, за което D(s, v) за някое v и ∀v ∈ V: D(s, v) е вярно")
+    else:
+        st.write("Няма такова подмножество")
+
+
+
