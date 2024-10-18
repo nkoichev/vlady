@@ -137,7 +137,7 @@ if choose == 'Vorlesung 2':
         st.code("def Da(s, v): return v in s")
         st.write(f"* Примерна функция 1: :blue[def D(s, v): return v in s] - проверява дали стойността :blue[v] сe среща в множеството :blue[s]")
         st.code("def Da2(s, v): return v >= s")
-        st.write(f"* Примерна функция 2: :blue[def D(s, v): return v in s] - проверява дали стойността :blue[v] сe среща в множеството :blue[s]")
+        st.write(f"* Примерна функция 2: :blue[def D(s, v): return v >= s] - проверява дали стойността :blue[v] сe среща в множеството :blue[s]")
         # Function to find a subset of S that satisfies the conditions
         def find_subset(S, V):
             def all_subsets(S):
