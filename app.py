@@ -131,7 +131,8 @@ if choose == 'Vorlesung 2':
             return v in s
 
         def Da2(s, v):
-            return v >= s
+            if isinstance(v, (int, float)) and isinstance(s, (int, float)):
+                return v >= s
 
         st.code("def Da(s, v): return v in s")
         st.write(f"* Примерна функция 1: :blue[def D(s, v): return v in s] - проверява дали стойността :blue[v] сe среща в множеството :blue[s]")
