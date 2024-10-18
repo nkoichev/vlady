@@ -131,11 +131,12 @@ if choose == 'Vorlesung 2':
         def Da2(s, v):
             return all(v >= el for el in s)  # Ensuring that v is greater than or equal to each element in the subset s
 
-        st.code("def Da(s, v): return v in s")
-        st.write(f"* Примерна функция 1: проверява дали стойността :blue[v] сe среща в множеството :blue[s]")
-        st.code("def Da2(s, v): return all(v >= el for el in s)")
-        st.write(f"* Примерна функция 2: проверява дали всяка една стойност на :blue[v] е по-голяма или равна на всяка една стойност в множеството :blue[s]")
         
+        st.write(f"* Примерна функция 1: проверява дали стойността :blue[v] сe среща в множеството :blue[s]")
+        st.code("def Da(s, v): return v in s")
+        st.write("---")
+        st.write(f"* Примерна функция 2: проверява дали всяка една стойност на :blue[v] е по-голяма или равна на всяка една стойност в множеството :blue[s]")
+        st.code("def Da2(s, v): return all(v >= el for el in s)")
         # Function to find a subset of S that satisfies the conditions
         def find_subset(S, V):
             def all_subsets(S):
