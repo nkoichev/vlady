@@ -102,7 +102,6 @@ if choose == 'Vorlesung 1':
 if choose == 'Vorlesung 2':
 
 
-
     from itertools import chain, combinations
 
     # Display the formula in code form
@@ -151,7 +150,7 @@ if choose == 'Vorlesung 2':
         # Function to find a subset of S that satisfies the second condition (Da2)
         def find_subset2(S, V):
             def all_subsets(S):
-                return chain.from_iterable(combinations(S, r) for r in range(len(S) + 1))
+                return chain.from_iterable(combinations(S, r) for r in range(1, len(S) + 1))  # Start from 1, no empty subsets
 
             # Check if there exists a subset s of S where ∀v ∈ V, Da2(s, v) is true
             for s in all_subsets(S):
