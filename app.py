@@ -131,7 +131,7 @@ if choose == 'Vorlesung 2':
             return v in s
 
         st.code("def D(s, v): return v in s")
-        st.write(f"Примерната функция :blue[def D(s, v): return v in s] проверява дали стойността v е в множеството s")
+        st.write(f"Примерната функция :blue[def D(s, v): return v in s] проверява дали стойността :blue[v] сe среща в множеството :blue[s]")
 
         # Function to find a subset of S that satisfies the conditions
         def find_subset(S, V):
