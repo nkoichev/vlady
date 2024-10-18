@@ -107,6 +107,8 @@ if choose == 'Vorlesung 2':
 
     # Display the formula in code form
     st.code("∃s⊆S:∀v∈V:D(s,v)")
+    # EXPLAIN THE PREDICATE: ∃s⊆S:∀v∈V:D(s,v)
+    st.write("Съществува :blue[s] принадлежащо на множеството :blue[S], такова че за всеки :blue[v] принадлежащо на множеството :blue[V], функцията :blue[D(s, v)] ще бъде вярна")
 
     # Define the sets S and V
     elements = {1, 2, 3, 4, 5}
@@ -154,72 +156,72 @@ if choose == 'Vorlesung 2':
 
 
 
-    # Define the sets S and V
-    elements = {1, 2, 3, 4, 5}
-    values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    # # Define the sets S and V
+    # elements = {1, 2, 3, 4, 5}
+    # values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
-    # S = st.multiselect("Choose some elements of S:", elements)
-    # V = st.multiselect("Choose some values of V:", values)
+    # # S = st.multiselect("Choose some elements of S:", elements)
+    # # V = st.multiselect("Choose some values of V:", values)
 
-    # Check if both S and V are selected and non-empty
-    if not S or not V:
-        st.write("---")
-    else:
+    # # Check if both S and V are selected and non-empty
+    # if not S or not V:
+    #     st.write("---")
+    # else:
 
-        # Define the predicate D(s, v), which checks if s is greater than or equal to v
-        def D(s, v):
-            return s >= v
+    #     # Define the predicate D(s, v), which checks if s is greater than or equal to v
+    #     def D(s, v):
+    #         return s >= v
 
-        st.code("def D(s, v): return s >= v")
-        st.write("Тази функция 'def D(s, v): return s >= v', проверява дали s е по-голямо или равно на v")
+    #     st.code("def D(s, v): return s >= v")
+    #     st.write("Тази функция 'def D(s, v): return s >= v', проверява дали s е по-голямо или равно на v")
 
-        # Function to check if for every v in V, there exists an s in S where D(s, v) is true
-        def find_s_for_all_v(S, V):
-            for v in V:
-                if not any(D(s, v) for s in S):
-                    return False
-            return True
+    #     # Function to check if for every v in V, there exists an s in S where D(s, v) is true
+    #     def find_s_for_all_v(S, V):
+    #         for v in V:
+    #             if not any(D(s, v) for s in S):
+    #                 return False
+    #         return True
 
-        # Display the result
-        if find_s_for_all_v(S, V):
-            st.write("Резултат: За всяко v ∈ V, съществува s ∈ S, за което D(s, v) е **:green[вярно]**")
-        else:
-            st.write("Резултат: **:red[Няма такова s за всички v]**")
-
-
-        st.write("---")
+    #     # Display the result
+    #     if find_s_for_all_v(S, V):
+    #         st.write("Резултат: За всяко v ∈ V, съществува s ∈ S, за което D(s, v) е **:green[вярно]**")
+    #     else:
+    #         st.write("Резултат: **:red[Няма такова s за всички v]**")
 
 
+    #     st.write("---")
 
-    st.code('∃s⊆S: D(s, v) ∧ ∀v∈V: D(s, v)')
 
-    # from itertools import chain, combinations
 
-    # # Множества S и V
-    # S = {1, 2, 3, 4, 5}
-    # V = {1, 2, 3}
+    # st.code('∃s⊆S: D(s, v) ∧ ∀v∈V: D(s, v)')
 
-    # Предикат D(s, v), който проверява дали v принадлежи на s
-    def D(s, v):
-        return v in s
+    # # from itertools import chain, combinations
 
-    # Функция за намиране на подмножество s, такова че D(s, v) за някое v ∈ V и ∀v ∈ V: D(s, v) е вярно
-    def find_subset_with_condition(S, V):
-        def all_subsets(S):
-            return chain.from_iterable(combinations(S, r) for r in range(len(S)+1))
+    # # # Множества S и V
+    # # S = {1, 2, 3, 4, 5}
+    # # V = {1, 2, 3}
 
-        for s in all_subsets(S):
-            # Проверяваме дали съществува някакво v ∈ V, за което D(s, v) и ∀v ∈ V: D(s, v)
-            if any(D(s, v) for v in V) and all(D(s, v) for v in V):
-                return set(s)
-        return None
+    # # Предикат D(s, v), който проверява дали v принадлежи на s
+    # def D(s, v):
+    #     return v in s
 
-    # Пример
-    subset = find_subset_with_condition(S, V)
-    if subset:
-        st.write(f"Подмножество s = {subset}, за което D(s, v) за някое v и ∀v ∈ V: D(s, v) е вярно")
-    else:
-        st.write("Няма такова подмножество")
+    # # Функция за намиране на подмножество s, такова че D(s, v) за някое v ∈ V и ∀v ∈ V: D(s, v) е вярно
+    # def find_subset_with_condition(S, V):
+    #     def all_subsets(S):
+    #         return chain.from_iterable(combinations(S, r) for r in range(len(S)+1))
+
+    #     for s in all_subsets(S):
+    #         # Проверяваме дали съществува някакво v ∈ V, за което D(s, v) и ∀v ∈ V: D(s, v)
+    #         if any(D(s, v) for v in V) and all(D(s, v) for v in V):
+    #             return set(s)
+    #     return None
+
+    # # Пример
+    # subset = find_subset_with_condition(S, V)
+    # if subset:
+    #     st.write(f"Подмножество s = {subset}, за което D(s, v) за някое v и ∀v ∈ V: D(s, v) е вярно")
+    # else:
+    #     st.write("Няма такова подмножество")
 
 
 
