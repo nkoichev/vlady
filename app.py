@@ -169,7 +169,8 @@ if choose == 'Vorlesung 2':
 
         # Display the results for the first predicate
         if valid_subsets_1:
-            st.write(f"Резултат 1: Съществуват подмножества s = {valid_subsets_1}, за които ∀v ∈ V: Da(s, v) е **:green[вярно]**")
+            # st.write(f"Резултат 1: Съществуват подмножества s = {valid_subsets_1}, за които ∀v ∈ V: Da(s, v) е **:green[вярно]**")
+            st.write(f"Резултат 1: Съществуват подмножества s, за които ∀v ∈ V: Da(s, v) е **:green[вярно]**")
         else:
             st.write("Резултат 1: **:red[Няма такива подмножества]**")
 
