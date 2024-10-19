@@ -189,12 +189,12 @@ if choose == 'Vorlesung 2':
             else:
                 st.error("**Резултат 2**: **:red[Правилото от функцията не е изпълнено!]** Не съществува такъв елемент :blue[s], за който всеки един елемент :blue[v] да e по-голям или равен.")
 
-        with tab2:
-            # Display the formula in code form  
-            st.code("Логическо твърдение: ∃s⊆S: D(s, v) ∧ ∀v∈V: D(s, v)")
+    with tab2:
+        # Display the formula in code form  
+        st.code("Логическо твърдение: ∃s⊆S: D(s, v) ∧ ∀v∈V: D(s, v)")
 
-            # EXPLAIN THE PREDICATE: ∃s⊆S: D(s, v) ∧ ∀v∈V: D(s, v)
-            st.write("Under construction...")
+        # EXPLAIN THE PREDICATE: ∃s⊆S: D(s, v) ∧ ∀v∈V: D(s, v)
+        st.write("Under construction...")
 
 
 
