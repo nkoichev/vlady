@@ -106,7 +106,7 @@ if choose == 'Vorlesung 2':
     # Display the formula in code form
     st.code("∃s∈S:∀v∈V:Da(s,v)")
     # EXPLAIN THE PREDICATE: ∃s⊆S:∀v∈V:Da(s,v)
-    st.write("Съществува подмножество :blue[s] принадлежащо на множеството :blue[S], такова че за всеки елемент от подмножеството :blue[v] принадлежащо на множеството :blue[V], функцията :blue[Da(s, v)] ще бъде вярна")
+    st.write("**Значение**:Съществува подмножество :blue[s] принадлежащо на множеството :blue[S], такова че за всеки елемент от подмножеството :blue[v] принадлежащо на множеството :blue[V], функцията :blue[Da(s, v)] ще бъде вярна.")
 
     # Define the sets S and V
     elements_s = {1, 2, 3, 4, 5}
@@ -114,8 +114,8 @@ if choose == 'Vorlesung 2':
 
     with st.sidebar:
         st.write("---")
-        S = st.multiselect("Choose some elements of S:", elements_s)
-        V = st.multiselect("Choose some elements of V:", elements_v)
+        S = st.multiselect(f"Choose some elements of :blue[S]:", elements_s)
+        V = st.multiselect(f"Choose some elements of :blue[V]:", elements_v)
 
     # Check if both S and V are selected and non-empty
     if not S or not V:
