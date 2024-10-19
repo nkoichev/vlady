@@ -76,8 +76,15 @@ if choose == 'Vorlesung 1':
     # Negation (NOT)
     negation_a = not a
     negation_b = not b
-    st.write(f"Negation (NOT A): {negation_a}")
-    st.write(f"Negation (NOT B): {negation_b}")
+    if negation_a:
+        st.success(f"Negation (NOT A): {negation_a}")
+    else:
+        st.error(f"Negation (NOT A): {negation_a}")
+    if negation_b:
+        st.success(f"Negation (NOT B): {negation_b}")
+    else:
+        st.error(f"Negation (NOT B): {negation_b}")
+    
 
     # Implication (IF THEN)
     implication = not a or b
