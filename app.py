@@ -77,7 +77,6 @@ if choose == 'Vorlesung 1':
     else:
         st.error("Negation (NOT B): ", negation_b)
 
-
     # Implication (IF THEN)
     implication = not a or b
     if implication:
