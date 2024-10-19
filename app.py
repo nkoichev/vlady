@@ -51,12 +51,20 @@ if choose == 'Vorlesung 1':
         b = st.selectbox("Choose a value for B:", [True, False])
 
 
+    # # Conjunction (AND)
+    # conjunction = a and b
+    # if conjunction:
+    #     st.success(f"Conjunction (A AND B): {conjunction}")
+    # else:
+    #     st.error(f"Conjunction (A AND B): {conjunction}")
+
     # Conjunction (AND)
     conjunction = a and b
     if conjunction:
-        st.success(f"Conjunction (A AND B): {conjunction}")
+        st.success("Conjunction (A AND B): " + str(conjunction))
     else:
-        st.error(f"Conjunction (A AND B): {conjunction}")
+        st.error("Conjunction (A AND B): " + str(conjunction))
+
 
     # Disjunction (OR)
     disjunction = a or b
