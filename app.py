@@ -134,7 +134,7 @@ if choose == 'Vorlesung 2':
         st.write(f"* Примерна функция 1: проверява дали съществуват **s** от множеството **S**, за които да е изпълнена функцията **Da(s, v)**.")
         st.code("def Da(s, v): return v in s")
         st.write("---")
-        st.write(f"* Примерна функция 2: проверява дали съществуват **s** от множеството **S**, за които да е изпълнена функцията **Da2(s, v)**. ")
+        st.write(f"* Примерна функция 2: проверява дали съществуват **s** от множеството **S**, за които да е изпълнена функцията **Da2(s, v)**. Each element v is greater than or equal to each element in the subset s")
         st.code("def Da2(s, v): return all(v >= el for el in s)")
         st.write("---")
 
@@ -170,7 +170,7 @@ if choose == 'Vorlesung 2':
         # Display the results for the first predicate
         if valid_subsets_1:
             # st.write(f"Резултат 1: Съществуват подмножества s = {valid_subsets_1}, за които ∀v ∈ V: Da(s, v) е **:green[вярно]**")
-            st.write(f"Резултат 1: Съществуват подмножества s, за които ∀v ∈ V: Da(s, v) е **:green[вярно]**")
+            st.write(f"Резултат 1: Съществуват подмножества s = {V}, за които ∀v ∈ V: Da(s, v) е **:green[вярно]**")
         else:
             st.write("Резултат 1: **:red[Няма такива подмножества]**")
 
