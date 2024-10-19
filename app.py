@@ -61,9 +61,9 @@ if choose == 'Vorlesung 1':
     # Conjunction (AND)
     conjunction = a and b
     if conjunction:
-        st.success("Conjunction (A AND B): " + str(conjunction))
+        st.success(f"Conjunction (A AND B): {conjunction}")
     else:
-        st.error("Conjunction (A AND B): " + str(conjunction))
+        st.error(f"Conjunction (A AND B): {conjunction}")
 
 
     # Disjunction (OR)
