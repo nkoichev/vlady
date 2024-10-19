@@ -105,7 +105,9 @@ if choose == 'Vorlesung 2':
     from itertools import chain, combinations
 
 
-    tab1, tab2 = st.tabs(["∃s∈S:∀v∈V:Da(s,v)","∃s⊆S:D(s,v)∧∀v∈V:D(s,v)"])
+    # tab1, tab2 = st.tabs(["∃s∈S:∀v∈V:Da(s,v)","∃s⊆S:D(s,v)∧∀v∈V:D(s,v)"])
+    tab1, tab2 = st.tabs([r"$\exists s \in S: \forall v \in V: D_a(s, v)$", r"$\exists s \subseteq S: D(s,v) \land \forall v \in V: D(s,v)$"])
+
     
     with tab1:
 
