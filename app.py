@@ -105,9 +105,9 @@ if choose == 'Vorlesung 2':
     from itertools import chain, combinations
 
 
-    st.tabs = ("∃s∈S:∀v∈V:Da(s,v)","∃s⊆S:D(s,v)∧∀v∈V:D(s,v)")
-
-    if st.tabs == "∃s∈S:∀v∈V:Da(s,v)":
+    tabs = st.tabs = (("∃s∈S:∀v∈V:Da(s,v)","∃s⊆S:D(s,v)∧∀v∈V:D(s,v)"))
+    selected_tab = tabs[0]
+    if selected_tab == "∃s∈S:∀v∈V:Da(s,v)":
 
 
         # Display the formula in code form
