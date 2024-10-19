@@ -105,7 +105,7 @@ if choose == 'Vorlesung 2':
     from itertools import chain, combinations
 
 
-    tab1, tab2 = st.tabs("∃s∈S:∀v∈V:Da(s,v)","∃s⊆S:D(s,v)∧∀v∈V:D(s,v)")
+    tab1, tab2 = st.tabs(["∃s∈S:∀v∈V:Da(s,v)","∃s⊆S:D(s,v)∧∀v∈V:D(s,v)"])
     
     with tab1:
 
