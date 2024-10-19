@@ -105,9 +105,9 @@ if choose == 'Vorlesung 2':
     from itertools import chain, combinations
 
 
-    tabs = st.tabs = (("∃s∈S:∀v∈V:Da(s,v)","∃s⊆S:D(s,v)∧∀v∈V:D(s,v)"))
-    selected_tab = tabs[0]
-    if selected_tab == "∃s∈S:∀v∈V:Da(s,v)":
+    tab1, tab2 = st.tabs = (("∃s∈S:∀v∈V:Da(s,v)","∃s⊆S:D(s,v)∧∀v∈V:D(s,v)"))
+    
+    with tab1:
 
 
         # Display the formula in code form
@@ -189,38 +189,15 @@ if choose == 'Vorlesung 2':
             else:
                 st.error("**Резултат 2**: **:red[Правилото от функцията не е изпълнено!]** Не съществува такъв елемент :blue[s], за който всеки един елемент :blue[v] да e по-голям или равен.")
 
+        with tab2:
+            # Display the formula in code form  
+            st.code("Логическо твърдение: ∃s⊆S: D(s, v) ∧ ∀v∈V: D(s, v)")
+
+            # EXPLAIN THE PREDICATE: ∃s⊆S: D(s, v) ∧ ∀v∈V: D(s, v)
+            st.write("Under construction...")
 
 
 
-    # st.code('∃s⊆S: D(s, v) ∧ ∀v∈V: D(s, v)')
-
-    # # from itertools import chain, combinations
-
-    # # # Множества S и V
-    # # S = {1, 2, 3, 4, 5}
-    # # V = {1, 2, 3}
-
-    # # Предикат D(s, v), който проверява дали v принадлежи на s
-    # def D(s, v):
-    #     return v in s
-
-    # # Функция за намиране на подмножество s, такова че D(s, v) за някое v ∈ V и ∀v ∈ V: D(s, v) е вярно
-    # def find_subset_with_condition(S, V):
-    #     def all_subsets(S):
-    #         return chain.from_iterable(combinations(S, r) for r in range(len(S)+1))
-
-    #     for s in all_subsets(S):
-    #         # Проверяваме дали съществува някакво v ∈ V, за което D(s, v) и ∀v ∈ V: D(s, v)
-    #         if any(D(s, v) for v in V) and all(D(s, v) for v in V):
-    #             return set(s)
-    #     return None
-
-    # # Пример
-    # subset = find_subset_with_condition(S, V)
-    # if subset:
-    #     st.write(f"Подмножество s = {subset}, за което D(s, v) за някое v и ∀v ∈ V: D(s, v) е вярно")
-    # else:
-    #     st.write("Няма такова подмножество")
 
 
 
