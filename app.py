@@ -105,15 +105,15 @@ if choose == 'Vorlesung 2':
     from itertools import chain, combinations
 
 
-    # tab1, tab2 = st.tabs(["∃s∈S:∀v∈V:Da(s,v)","∃s⊆S:D(s,v)∧∀v∈V:D(s,v)"])
-    tab1, tab2 = st.tabs([r"$\exists s \in S: \forall v \in V: D_a(s, v)$", r"$\exists s \subseteq S: D(s,v) \land \forall v \in V: D(s,v)$"])
+    tab1, tab2 = st.tabs(["Логическо твърдение 1","Логическо твърдение 2"])
+    
 
     
     with tab1:
 
 
         # Display the formula in code form
-        st.code("Логическо твърдение: ∃s∈S:∀v∈V:Da(s,v)")
+        st.code("Логическо твърдение 1: ∃s∈S:∀v∈V:Da(s,v)")
         # EXPLAIN THE PREDICATE: ∃s⊆S:∀v∈V:Da(s,v)
         st.write("**Значение**: Съществува подмножество :blue[s] принадлежащо на множеството :blue[S], такова че за всеки елемент от подмножеството :blue[v] принадлежащо на множеството :blue[V], функцията :blue[Da(s, v)] ще бъде вярна.")
 
@@ -193,7 +193,7 @@ if choose == 'Vorlesung 2':
 
     with tab2:
         # Display the formula in code form  
-        st.code("Логическо твърдение: ∃s⊆S: D(s, v) ∧ ∀v∈V: D(s, v)")
+        st.code("Логическо твърдение 2: ∃s⊆S:D(s,v) ∧ ∀v∈V:D(s,v)")
 
         # EXPLAIN THE PREDICATE: ∃s⊆S: D(s, v) ∧ ∀v∈V: D(s, v)
         st.write("Under construction...")
