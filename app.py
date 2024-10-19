@@ -170,15 +170,15 @@ if choose == 'Vorlesung 2':
         # Display the results for the first predicate
         if valid_subsets_1:
             # st.write(f"Резултат 1: Съществуват подмножества s = {valid_subsets_1}, за които ∀v ∈ V: Da(s, v) е **:green[вярно]**")
-            st.write(f"Резултат 1: Съществуват подмножества s = :blue[{V}], за които :blue[∀v ∈ V: Da(s, v)] е **:green[вярно]**. С други думи, всяко :blue[v] се съдържа в съществуващи елементи отподмножеството :blue[s] и правилото от функцията е изпълнено.")
+            st.success(f"Резултат 1: Съществуват подмножества s = :blue[{V}], за които :blue[∀v ∈ V: Da(s, v)] е **:green[вярно]**. С други думи, всяко :blue[v] се съдържа в съществуващи елементи отподмножеството :blue[s] и правилото от функцията е изпълнено.")
         else:
             st.write("Резултат 1: **:red[Няма такива подмножества]**")
 
         st.write("---")
-        
+
         # Display the results for the second predicate (Da2) after filtering
         if largest_valid_subsets_2:
-            st.write(f"Резултат 2: Съществуват подмножества s = :blue[{largest_valid_subsets_2}], за които :blue[∀v ∈ V: Da2(s, v)] е **:green[вярно]**. С други думи, всяко :blue[v] e по-голямо или равно на съществуващи елементи от подмножеството :blue[s] и правилото от функцията е изпълнено.")
+            st.success(f"Резултат 2: Съществуват подмножества s = :blue[{largest_valid_subsets_2}], за които :blue[∀v ∈ V: Da2(s, v)] е **:green[вярно]**. С други думи, всяко :blue[v] e по-голямо или равно на съществуващи елементи от подмножеството :blue[s] и правилото от функцията е изпълнено.")
         else:
             st.write("Резултат 2: **:red[Няма такива подмножества]**")
 
