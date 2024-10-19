@@ -53,25 +53,37 @@ if choose == 'Vorlesung 1':
 
     # Conjunction (AND)
     conjunction = a and b
-    st.write("Conjunction (A AND B): ", conjunction)
+    if conjunction:
+        st.success("Conjunction (A AND B): ", conjunction)
+    else:
+        st.error("Conjunction (A AND B): ", conjunction)
 
     # Disjunction (OR)
     disjunction = a or b
-    st.write("Disjunction (A OR B): ", disjunction)
+    if disjunction:
+        st.success("Disjunction (A OR B): ", disjunction)
+    else:
+        st.error("Disjunction (A OR B): ", disjunction)
 
     # Negation (NOT)
     negation_a = not a
     negation_b = not b
-    st.write("Negation (NOT A): ", negation_a)
-    st.write("Negation (NOT B): ", negation_b)
+    if negation_a:
+        st.success("Negation (NOT A): ", negation_a)
+    else:
+        st.error("Negation (NOT A): ", negation_a)
+    if negation_b:
+        st.success("Negation (NOT B): ", negation_b)
+    else:
+        st.error("Negation (NOT B): ", negation_b)
+
 
     # Implication (IF THEN)
     implication = not a or b
-    st.write("Implication (IF THEN): ", implication)
-
-
-    # Display the formula in code form
-    # code_formula = st.code("A ∧ B = A, A ∨ B = B, ¬A = ¬B, A → B = ¬A ∨ B")
+    if implication:
+        st.success("Implication (IF THEN): ", implication)
+    else:
+        st.error("Implication (IF THEN): ", implication)
     
 
     # Explanation section
@@ -82,6 +94,7 @@ if choose == 'Vorlesung 1':
     st.write(f"""
     - **Disjunction (OR)**: Returns True if either A or B is True.
     """)
+    
     code_disjunction = st.code("A ∨ B")
     st.write(f"""
     - **Negation (NOT)**: Inverts the value of A or B.
