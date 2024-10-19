@@ -54,35 +54,29 @@ if choose == 'Vorlesung 1':
     # Conjunction (AND)
     conjunction = a and b
     if conjunction:
-        st.success(f"Conjunction (A AND B): ", {conjunction})
+        st.success(f"Conjunction (A AND B): {conjunction}")
     else:
-        st.error(f"Conjunction (A AND B): ", {conjunction})
+        st.error(f"Conjunction (A AND B): {conjunction}")
 
     # Disjunction (OR)
     disjunction = a or b
     if disjunction:
-        st.success(f"Disjunction (A OR B): ", {disjunction})
+        st.success(f"Disjunction (A OR B): {disjunction}")
     else:
-        st.error(f"Disjunction (A OR B): ", {disjunction})
+        st.error(f"Disjunction (A OR B): {disjunction}")
 
     # Negation (NOT)
     negation_a = not a
     negation_b = not b
-    if negation_a:
-        st.success(f"Negation (NOT A): ", {negation_a})
-    else:
-        st.error(f"Negation (NOT A): ", {negation_a})
-    if negation_b:
-        st.success(f"Negation (NOT B): ", {negation_b})
-    else:
-        st.error(f"Negation (NOT B): ", {negation_b})
+    st.write(f"Negation (NOT A): {negation_a}")
+    st.write(f"Negation (NOT B): {negation_b}")
 
     # Implication (IF THEN)
     implication = not a or b
     if implication:
-        st.success(f"Implication (IF THEN): ", {implication})
+        st.success(f"Implication (A → B): {implication}")
     else:
-        st.error(f"Implication (IF THEN): ", {implication})
+        st.error(f"Implication (A → B): {implication}")
     
 
     # Explanation section
