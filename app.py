@@ -105,7 +105,8 @@ if choose == 'Vorlesung 2':
     from itertools import chain, combinations
 
 
-    tab1, tab2 = st.tabs(["Логическо твърдение 1","Логическо твърдение 2"])
+    tab1, tab2 = st.tabs(["Logical Statement 1", "Logical Statement 2"])
+
     
 
     
